@@ -1,0 +1,4 @@
+build_from:
+  aarch64: wimaha/tesla-ble-http-proxy:2.3.0
+  amd64: wimaha/tesla-ble-http-proxy:2.3.0
+  armv7: wimaha/tesla-ble-http-proxy:2.3.0
