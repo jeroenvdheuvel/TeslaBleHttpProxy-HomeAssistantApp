@@ -3,14 +3,17 @@ description: |-
   TeslaBleHttpProxy is a program written in Go that receives HTTP requests and forwards them via Bluetooth to a Tesla vehicle. The program can, for example, be easily used together with evcc.
 
   The program stores the received requests in a queue and processes them one by one. This ensures that only one Bluetooth connection to the vehicle is established at a time.
-version: "0.0.13"
+version: "0.0.14"
 slug: "tesla-ble-http-proxy"
 init: false
 ingress: true
 ingress_port: 8080
 ingress_entry: dashboard
 stage: experimental
-usb: true
+apparmor: true
+url: https://github.com/wimaha/TeslaBleHttpProxy
+host_dbus: true
+host_network: true
 map:
   - type: addon_config
     read_only: false
@@ -21,6 +24,5 @@ arch:
   - aarch64
 privileged:
   - NET_ADMIN
-  - SYS_ADMIN
 environment:
   logLevel: debug
